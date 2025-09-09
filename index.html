@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Dashboard - dashboard-3</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="repo-info">
+                    <i class="fab fa-github"></i>
+                    <h1>dashboard-3</h1>
+                    <span class="repo-description">Interactive Repository Explorer</span>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span id="file-count">0</span>
+                        <small>Files</small>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-folder"></i>
+                        <span id="folder-count">0</span>
+                        <small>Folders</small>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-code"></i>
+                        <span id="total-lines">0</span>
+                        <small>Lines</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Sidebar - File Explorer -->
+            <aside class="file-explorer">
+                <div class="explorer-header">
+                    <h3><i class="fas fa-folder-tree"></i> File Explorer</h3>
+                    <button id="refresh-btn" class="refresh-btn" title="Refresh">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="file-search" placeholder="Search files..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="file-tree" id="file-tree">
+                    <!-- File tree will be populated here -->
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="content-area">
+                <!-- Welcome Screen -->
+                <div class="welcome-screen" id="welcome-screen">
+                    <div class="welcome-content">
+                        <i class="fas fa-folder-open welcome-icon"></i>
+                        <h2>Welcome to Repository Dashboard</h2>
+                        <p>Select a file from the explorer to view its contents</p>
+                        <div class="quick-stats">
+                            <div class="quick-stat">
+                                <i class="fas fa-star"></i>
+                                <span>Interactive Explorer</span>
+                            </div>
+                            <div class="quick-stat">
+                                <i class="fas fa-code"></i>
+                                <span>Syntax Highlighting</span>
+                            </div>
+                            <div class="quick-stat">
+                                <i class="fas fa-search"></i>
+                                <span>File Search</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Viewer -->
+                <div class="file-viewer" id="file-viewer" style="display: none;">
+                    <div class="file-header">
+                        <div class="file-info">
+                            <i class="file-icon" id="file-icon"></i>
+                            <span class="file-name" id="file-name"></span>
+                            <span class="file-size" id="file-size"></span>
+                        </div>
+                        <div class="file-actions">
+                            <button class="action-btn" id="copy-content" title="Copy content">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <button class="action-btn" id="download-file" title="Download file">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="file-content">
+                        <pre><code id="file-code" class="language-markup"></code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
